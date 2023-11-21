@@ -1,0 +1,78 @@
+'''   
+Certainly! This code implements the Bellman-Ford algorithm for finding the shortest paths from a source node to all other nodes in a weighted graph. The algorithm can handle graphs with negative edge weights and can detect negative cycles.
+
+Let's break down the code:
+
+1. **Bellman-Ford Function (`bellman_ford`):**
+   - Input: `graph` is a dictionary representing the weighted directed graph, and `source` is the starting node.
+   - Output: Returns two dictionaries - `distance` (shortest distances from the source to each node) and `predecessor` (predecessor nodes in the shortest paths).
+
+   ```python
+   distance, predecessor = dict(), dict()
+   for node in graph:
+       distance[node], predecessor[node] = float('inf'), None
+   distance[source] = 0
+   ```
+   Initialize `distance` to infinity for all nodes except the source, which is set to 0.
+
+   ```python
+   for i in range(len(graph) - 1):
+       for node in graph:
+           for neighbor in graph[node]:
+               new_distance = distance[node] + graph[node][neighbor]
+               if new_distance < distance[neighbor]:
+                   distance[neighbor], predecessor[neighbor] = new_distance, node
+   ```
+   Relax edges repeatedly. Iterate `len(graph) - 1` times (in the worst case, the shortest path won't have more than `len(graph) - 1` edges). For each edge, update the distance if a shorter path is found.
+
+   ```python
+   for node in graph:
+       for neighbor in graph[node]:
+           assert distance[node] + graph[node][neighbor] >= distance[neighbor], "Negative cycle detected"
+   ```
+   Check for negative cycles. If a shorter path is found even after `len(graph) - 1` iterations, it indicates a negative cycle.
+
+   ```python
+   return distance, predecessor
+   ```
+   Return the final distances and predecessors.
+
+2. **Print Routing Table Function (`print_routing_table`):**
+   - Input: `destination_nodes` (a list of nodes), `next_hop` (dictionary mapping nodes to their next hop in the shortest path), and `cost` (dictionary mapping nodes to their cost from the source).
+   - Output: Prints a routing table in a formatted manner.
+
+   ```python
+   print("{:<20} {:<20} {:<20}".format("Destination", "Next Hop", "Cost"))
+   ```
+   Print the table header.
+
+   ```python
+   for destination in destination_nodes:
+       print("{:<20} {:<20} {:<20}".format(destination, str(next_hop[destination]), str(cost[destination])))
+   ```
+   Iterate through destination nodes and print their next hop and cost.
+
+3. **Graph Definition:**
+   ```python
+   graph = {
+       'a': {'b': -1, 'c': 4},
+       'b': {'c': 3, 'd': 2, 'e': 2},
+       'c': {},
+       'd': {'b': 1, 'c': 5},
+       'e': {'d': -3}
+   }
+   ```
+   This is an example graph where nodes are letters ('a', 'b', 'c', 'd', 'e'), and edges have associated weights. Negative weights are allowed.
+
+4. **Running the Algorithm and Printing the Routing Table:**
+   ```python
+   result = bellman_ford(graph, 'a')
+
+   destination_nodes = sorted(result[0].keys())  # Assuming 'a' is the source node
+   next_hop = result[1]
+   cost = result[0]
+
+   print_routing_table(destination_nodes, next_hop, cost)
+   ```
+   Run the Bellman-Ford algorithm on the graph with source 'a', get the result, and then print the routing table using the `print_routing_table` function.
+'''
