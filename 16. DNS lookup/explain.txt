@@ -1,0 +1,41 @@
+This Python script defines a function `dns_lookup(input_value)` that takes either an IP address or a domain name as input and performs a DNS lookup to obtain information about the input. The script then takes user input and calls this function.
+
+Let's break down the code:
+
+1. **Function Definition (`dns_lookup`):**
+   - Input: `input_value` (a string representing either an IP address or a domain name).
+   - Output: Prints information about the input, including its type (IP address or Domain Name) and the corresponding result.
+
+   ```python
+   def dns_lookup(input_value):
+       try:
+           ip_address = socket.gethostbyname(input_value)
+           result_type = "IP Address"
+       except socket.herror:
+           host_name, _, ip_addresses = socket.gethostbyaddr(input_value)
+           ip_address = ip_addresses[0]
+           result_type = "Domain Name"
+
+       print(f"Input: {input_value}\nType: {result_type}\nResult: {ip_address}")
+   ```
+
+   The function uses a try-except block to handle the case where `socket.gethostbyname()` may raise a `socket.herror` if the input is not a valid domain name. If it succeeds, it means the input is an IP address, and the function prints the IP address and sets the result type to "IP Address". If an error occurs, it assumes the input is a domain name, performs a reverse lookup to get the associated IP addresses, prints the first IP address, and sets the result type to "Domain Name".
+
+2. **User Input and Function Call:**
+   ```python
+   if __name__ == "__main__":
+       user_input = input("Enter an IP address or a domain name: ")
+       dns_lookup(user_input)
+   ```
+
+   The script checks if it's being run as the main program (`__name__ == "__main__"`) and then prompts the user to enter an IP address or domain name. It then calls the `dns_lookup` function with the user's input.
+
+3. **Example Output:**
+   ```
+   Enter an IP address or a domain name: www.example.com
+   Input: www.example.com
+   Type: Domain Name
+   Result: 93.184.216.34
+   ```
+
+   This is an example output for the input "www.example.com". The script performs a DNS lookup, identifies it as a domain name, and prints the corresponding IP address (in this case, "93.184.216.34").
