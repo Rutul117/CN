@@ -16,12 +16,12 @@ def bellman_ford(graph, source):
             assert distance[node] + graph[node][neighbor] >= distance[neighbor], "Negative cycle detected"
 
     return distance, predecessor
-
 def print_routing_table(destination_nodes, next_hop, cost):
-    print("Destination\tNext Hop\tCost")
+    print("{:<20} {:<20} {:<20}".format("Destination", "Next Hop", "Cost"))
     for destination in destination_nodes:
-        print(f"{destination}\t\t{next_hop[destination]}\t\t{cost[destination]}")
-        
+        print("{:<20} {:<20} {:<20}".format(destination, str(next_hop[destination]), str(cost[destination])))
+
+# Rest of the code remains unchanged
 graph = {
     'a': {'b': -1, 'c':  4},
     'b': {'c':  3, 'd':  2, 'e':  2},
@@ -29,7 +29,6 @@ graph = {
     'd': {'b':  1, 'c':  5},
     'e': {'d': -3}
 }
-
 
 result = bellman_ford(graph, 'a')
 
