@@ -1,0 +1,75 @@
+This code defines a function `get_subnet_mask(ip)` that takes an IP address as input and determines its class, providing the corresponding subnet mask. Additionally, it prints information about the class of the IP address. After defining the function, the code takes user input for an IP address, calls the function, and then processes the IP address to obtain network and last addresses.
+
+Let's break down the code:
+
+1. **Function Definition (`get_subnet_mask`):**
+   - Input: `ip` (a string representing an IP address).
+   - Output: Returns the subnet mask corresponding to the class of the IP address.
+
+   ```python
+   def get_subnet_mask(ip):
+       checkclass = ip.split('.')[0]
+       cc = int(checkclass)
+       mask = None
+   ```
+
+   The function starts by extracting the first part of the IP address to determine its class. It then initializes the `mask` variable to `None`.
+
+   ```python
+       if cc > 0:
+           if cc <= 127:
+               mask = "255.0.0.0"
+               print("Class A IP Address")
+               print("SUBNET MASK:\n" + mask)
+           if cc >= 128 and cc <= 191:
+               mask = "255.255.0.0"
+               print("Class B IP Address")
+               print("SUBNET MASK:\n" + mask)
+           if cc >= 192 and cc <= 223:
+               mask = "255.255.255.0"
+               print("Class C IP Address")
+               print("SUBNET MASK:\n" + mask)
+           if cc >= 224 and cc <= 239:
+               mask = "255.0.0.0"
+               print("Class D IP Address Used for multicasting")
+           if cc >= 240 and cc <= 254:
+               mask = "255.0.0.0"
+               print("Class E IP Address Experimental Use")
+   ```
+
+   Based on the class of the IP address, it sets the subnet mask and prints information about the IP class. If the class is A, B, or C, it prints the class and the corresponding subnet mask. If it's class D, it prints that it's used for multicasting. If it's class E, it prints that it's for experimental use.
+
+   ```python
+       return mask
+   ```
+
+   The function returns the determined subnet mask.
+
+2. **User Input and Function Call:**
+   ```python
+   ip = input("ENTER IP:")
+   mask = get_subnet_mask(ip)
+   ```
+
+   Takes user input for an IP address and calls the `get_subnet_mask` function.
+
+3. **Processing IP Address:**
+   ```python
+   networkAddr = ""
+   lastAddr = ""
+   ipAddrParts = ip.split(".")
+   ```
+
+   Initializes variables for network and last addresses and splits the input IP address into its four parts.
+
+   The code snippet provided does not include further processing or explanation for calculating the network and last addresses. If you intend to calculate these values, additional code would be needed.
+
+4. **Example Output:**
+   ```
+   ENTER IP:192.168.10.1
+   Class C IP Address
+   SUBNET MASK:
+   255.255.255.0
+   ```
+
+   This is an example output for the input IP address "192.168.10.1". The code identifies it as a Class C IP address and prints the corresponding subnet mask.
