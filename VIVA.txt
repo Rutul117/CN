@@ -768,6 +768,7 @@ Here's a detailed explanation of CSMA and its variants:
    - **Collision Avoidance:**
      - CSMA/CA focuses on avoiding collisions rather than detecting them. Devices announce their intent to transmit before actually transmitting.
 
+
    - **Request to Send (RTS) and Clear to Send (CTS):**
      - Before sending data, a device may issue a Request to Send (RTS) signal to the receiving device. If the receiving device is ready to accept the data, it responds with a Clear to Send (CTS) signal.
 
