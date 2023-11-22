@@ -7,7 +7,7 @@ In computer networks, a topology refers to the arrangement of nodes and the inte
       - Requires less cable length than some other topologies.
    - **Disadvantages:**
       - Performance can degrade as more devices are added.
-      - If the central bus fails, the entire network can go down.
+      - If the central bus fails, the entire network can go down. 
 
 2. **Ring Topology:**
    - **Description:** In a ring topology, each device is connected to exactly two other devices, forming a ring-like structure. Data travels in one direction around the ring.
