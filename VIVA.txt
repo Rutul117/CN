@@ -794,3 +794,88 @@ CSMA protocols have played a crucial role in the development of network communic
 
 
 
+
+The Internet Group Management Protocol (IGMP) is a protocol that allows several devices to share one IP address so they can all receive the same data. IGMP is a network layer protocol used to set up multicasting on networks that use the Internet Protocol version 4 (IPv4)
+
+
+What is ICMP Used For? Internet Control Message Protocol (ICMP) is used for reporting errors and performing network diagnostics. In the error reporting process, ICMP sends messages from the receiver to the sender when data does not come though as it should.
+
+
+network  layer
+ARP , RARP , ICMP , IGMP 
+
+routing protocol 
+RIP , OSPF. BGP , MPLS
+MPLS Meaning Multiprotocol Label Switching, or MPLS, is a networking technology that routes traffic using the shortest path based on “labels,” rather than network addresses, to handle forwarding over private wide area networks.
+
+
+The full form of MANET is Mobile Ad Hoc Network. MANET is a wireless network of decentralized type. It does not rely on an access point in the managed infrastructure or a pre-existing infrastructure, like routers in wired networks. It is, thus, ad hoc.
+
+routing in manet 
+AODV , DSR , Mobile ip
+
+
+
+
+transport layer 
+TCP and UDP 
+SCTP
+SCTP stands for Stream Control Transmission Protocol. 
+
+It is a connection- oriented protocol in computer networks which provides a full-duplex association i.e., transmitting multiple streams of data between two end points at the same time that have established a connection in network. It is sometimes referred to as next generation TCP or TCPng, SCTP makes it easier to support telephonic conversation on Internet. A telephonic conversation requires transmitting of voice along with other data at the same time on both ends, SCTP protocol makes it easier to establish reliable connection. 
+
+SCTP is also intended to make it easier to establish connection over wireless network and managing transmission of multimedia data. SCTP is a standard protocol (RFC 2960) and is developed by Internet Engineering Task Force (IETF). 
+
+
+RTP
+RTPA protocol is designed to handle real-time traffic (like audio and video) of the Internet, is known as Real Time Transport Protocol (RTP). RTP must be used with UDP. It does not have any delivery mechanism like multicasting or port numbers. RTP supports different formats of files like MPEG and MJPEG. It is very sensitive to packet delays and less sensitive to packet loss
+
+
+Application layer
+1. TELNET
+
+Telnet stands for the TELetype NETwork. It helps in terminal emulation. It allows Telnet clients to access the resources of the Telnet server. It is used for managing files on the internet. It is used for the initial setup of devices like switches. The telnet command is a command that uses the Telnet protocol to communicate with a remote device or system. Port number of telnet is 23. 
+
+2. FTP
+
+FTP stands for File Transfer Protocol. It is the protocol that actually lets us transfer files. It can facilitate this between any two machines using it. But FTP is not just a protocol but it is also a program.FTP promotes sharing of files via remote computers with reliable and efficient data transfer. The Port number for FTP is 20 for data and 21 for control. 
+
+3.  SMTP
+
+It stands for Simple Mail Transfer Protocol. It is a part of the TCP/IP protocol. Using a process called “store and forward,” SMTP moves your email on and across networks. It works closely with something called the Mail Transfer Agent (MTA) to send your communication to the right computer and email inbox. The Port number for SMTP is 25. 
+
+4.SNMP
+
+It stands for Simple Network Management Protocol. It gathers data by polling the devices on the network from a management station at fixed or random intervals, requiring them to disclose certain information. It is a way that servers can share information about their current state, and also a channel through which an administrate can modify pre-defined values. The Port number of SNMP is 161(TCP) and 162(UDP). 
+
+5.   DHCP
+
+It stands for Dynamic Host Configuration Protocol (DHCP). It gives IP addresses to hosts. There is a lot of information a DHCP server can provide to a host when the host is registering for an IP address with the DHCP server. Port number for DHCP is 67, 68. 
+
+
+6.  HTTP/HTTPS
+
+HTTP stands for Hypertext Transfer Protocol and HTTPS is the more secured version of HTTP, that’s why HTTPS stands for Hypertext Transfer Protocol Secure. This protocol is used to access data from the World Wide Web. The Hypertext is the well-organized documentation system that is used to link pages in the text document.
+
+HTTP is based on the client-server model.
+It uses TCP for establishing connections.
+HTTP is a stateless protocol, which means the server doesn’t maintain any information about the previous request from the client.
+HTTP uses port number 80 for establishing the connection.
+
+
+S.No.	HTTP                                                                                    	HTTPS
+1.	HTTP stands for HyperText Transfer Protocol.	                              HTTPS for HyperText Transfer Protocol Secure.
+2.	In HTTP, URL begins with “http://”.                                       	In HTTPs, URL starts with “https://”.
+3.	HTTP uses port number 80 for communication.	                              HTTPs uses 443 port number for communication.
+4.	HTTP is considered to be unsecure.                                       	HTTPs is considered as secure.
+5.	HTTP works at Application Layer.                                          	HTTPS works at Transport Layer.
+6.	In HTTP, Encryption is absent.	                                          Encryption is present in HTTPS.
+7.	HTTP does not require any certificates.	                                 HTTPS needs SSL Certificates.
+8.	HTTP does not improve search ranking	                                    HTTPS helps to improve search ranking
+9.	HTTP faster than HTTPS	                                                   HTTPS slower than HTTP
+10.	HTTP does not use data hashtags to secure data.	                        While HTTPS will have the data before sending it and                                                                                    return it to its original state on the receiver side.
+11.	In HTTP Data is transfer in plaintext.	                                 In HTTPS Data transfer in ciphertext.
+12.	HTTP Should be avoided.	                                                HTTPS Should be preferred.
+13.	Search engines do not favour the insecure website.	                     Improved reputation of the website in search engine.
+14.	HTTP Does not require SSL/TLS or Certificates                     	HTTPS Requires SSL/TLS implementation with Certificates.
+15.	In HTTP Users ar  worried about their data.	                     In HTTPS Users are  confident about the security of their data.
