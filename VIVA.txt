@@ -874,6 +874,7 @@ S.No.	HTTP                                                                      
 8.	HTTP does not improve search ranking	                                    HTTPS helps to improve search ranking
 9.	HTTP faster than HTTPS	                                                   HTTPS slower than HTTP
 10.	HTTP does not use data hashtags to secure data.	                        While HTTPS will have the data before sending it and                                                                                    return it to its original state on the receiver side.
+
 11.	In HTTP Data is transfer in plaintext.	                                 In HTTPS Data transfer in ciphertext.
 12.	HTTP Should be avoided.	                                                HTTPS Should be preferred.
 13.	Search engines do not favour the insecure website.	                     Improved reputation of the website in search engine.
